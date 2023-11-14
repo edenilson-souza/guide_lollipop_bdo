@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background: rgba(255, 255, 255, 0.8); 
+    background-image: url('iconelolipop.png'); 
+   
+    background-position: center;
+}
+
+#card {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#counter {
+    font-size: 24px;
+    color: #3498db;
+}
+ 
+.textoAzul{
+    color: #3498db;
+}
+.icon-img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+.img-right{
+    left: 0px;
+    bottom: 0px;
+}
+.img-left{
+    right: 0px;
+    bottom: 0px;
+}
+.colaborar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
