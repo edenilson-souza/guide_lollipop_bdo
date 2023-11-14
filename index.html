@@ -22,7 +22,7 @@
 
         <script>
             function updateCounter() {
-                const dataInicio = new Date("2023-11-13").getTime();
+                const dataInicio = new Date("2023-11-11").getTime();
                 const currentDate = new Date(dataInicio + new Date().getTimezoneOffset() * 60 * 1000);
                 const midnight = new Date();
                 const elapsedDays = Math.floor((currentDate - midnight) / (24 * 60 * 60 * 1000)) * -1 - 1;
