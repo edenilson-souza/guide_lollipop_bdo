@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Progresso</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cartão de Progresso</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="card">
+            <p>Estamos <span class="textoAzul">GRINDANDO</span></p>
+            <p>Há <span id="counter">0</span> dias</p>
+            <p>Sem <span class="textoAzul">GANKS REVERSOS</span> com perda de tempo</p>
+            <p>Nosso recorde é de <span id="recordCounter">0</span> dias</p>
 
-    <div id="card">
-        <p>Estamos <span class="textoAzul">GRINDANDO</span></p>
-        <p>Há <span id="counter">0</span> dias</p>
-        <p>Sem <span class="textoAzul">GANKS REVERSOS</span> com perda de tempo</p>
-        <p>Nosso recorde é de <span id="recordCounter">0</span> dias</p>
-    
-        <div class="colaborar-container">
-            <img class="icon-img img-right" src="iconehush.png" alt="Imagem Esquerda">
-            <p>Colabore para nosso índice</p>
-            <img class="icon-img img-left" src="iconehush.png" alt="Imagem Direita">
+            <div class="colaborar-container">
+                <img class="icon-img img-right" src="iconehush.png" alt="Imagem Esquerda" />
+                <p>Colabore para nosso índice</p>
+                <img class="icon-img img-left" src="iconehush.png" alt="Imagem Direita" />
+            </div>
         </div>
-    </div>
 
-    <script>
-    
-    function updateCounter() {
-        const currentDate = new Date("2023-11-13");
-        const midnight = new Date();
-        const elapsedDays = Math.floor((currentDate - midnight) / (24 * 60 * 60 * 1000)) * -1; 
+        <script>
+            function updateCounter() {
+                const dataInicio = new Date("2023-11-13").getTime();
+                const currentDate = new Date(dataInicio + new Date().getTimezoneOffset() * 60 * 1000);
+                const midnight = new Date();
+                const elapsedDays = Math.floor((currentDate - midnight) / (24 * 60 * 60 * 1000)) * -1 - 1;
 
-        document.getElementById('counter').textContent = elapsedDays;
+                document.getElementById("counter").textContent = elapsedDays;
 
-        const currentRecord = parseInt(document.getElementById('recordCounter').textContent, 10);
-        if (elapsedDays > currentRecord) {
-            document.getElementById('recordCounter').textContent = elapsedDays;
-        }
-    }
-    updateCounter();
+                const currentRecord = parseInt(document.getElementById("recordCounter").textContent, 10);
+                if (elapsedDays > currentRecord) {
+                    document.getElementById("recordCounter").textContent = elapsedDays;
+                }
+            }
+            updateCounter();
 
-    setInterval(updateCounter, 1000 * 60 * 60 * 24);
-    </script>
-
-</body>
+            setInterval(updateCounter, 1000 * 10);
+        </script>
+    </body>
 </html>
